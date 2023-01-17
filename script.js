@@ -68,7 +68,7 @@ function ajouterPrune(){
 
     nouveauP.append(nouveauSpan);   // mettre le span a la fin
 }
-const varGlobale = "globale";
+varGlobale = "globale";
 
 //Une fonction
 function uneFonction() {
