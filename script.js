@@ -1,6 +1,6 @@
 const panier = {
     pommes : 2,
-    poires : 0,
+    poires : 5,
     prunes : 0,
 
 
@@ -11,24 +11,30 @@ const panier = {
 document.querySelector("#qtePommes").textContent = panier.pommes;
 
 function ajouterPomme(){
-    var item = document.getElementById("row").value;         // ajouter le texte
 
-    var valeur = document.getElementById("valeur").value;     // ajouter le prix
+    var nouveauPrice = document.getElementById("PriceApple").value;
 
-    let nouveauP = document.createElement("td");              // créer une balise p
+    var nouveauWeight = document.getElementById("WeightApple").value;
 
-    let nouveauSpan = document.createElement("span");
+    let quantite = quantite + 1;
 
-    nouveauP.innerText = item + " : ";                // Écrire dans le paragraphe
+    quantite = document.createElement("qtePommes");
 
-    nouveauSpan.innerText = valeur + "$";
+    let poids = document.createElement("poidsPommes");
 
-    document.getElementById("maListe").append(nouveauP);
+    let prix = document.createElement("prixPommes");
 
-    nouveauP.append(nouveauSpan);   // mettre le span a la fin
+    prix.innerText = nouveauPrice + " $";
+
+    poids.innerText = nouveauWeight + " lbs"
+
+    document.getElementById("prixPommes").append(prix);
+
+    prix.append(poids);   // mettre le span a la fin
+
 }
 function ajouterPoire(){
-    var item = document.getElementById("row").value;         // ajouter le texte
+    var item = document.getElementById("qtePoires").value;         // ajouter le texte
 
     var valeur = document.getElementById("valeur").value;     // ajouter le prix
 
@@ -45,7 +51,7 @@ function ajouterPoire(){
     nouveauP.append(nouveauSpan);   // mettre le span a la fin
 }
 function ajouterPrune(){
-    var item = document.getElementById("row").value;         // ajouter le texte
+    var item = document.getElementById("qtePrunes").value;         // ajouter le texte
 
     var valeur = document.getElementById("valeur").value;     // ajouter le prix
 
