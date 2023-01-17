@@ -2,35 +2,36 @@ const panier = {
     pommes : 2,
     poires : 5,
     prunes : 0,
-
-
-
 }
 
 // Pour afficher le nombre de pommes dans la facture détaillée
 document.querySelector("#qtePommes").textContent = panier.pommes;
+document.querySelector("#qtePoires").textContent = panier.poires;
+document.querySelector("#qtePrunes").textContent = panier.prunes;
 
 function ajouterPomme(){
 
-    var nouveauPrice = document.getElementById("PriceApple").value;
+    let nouveauPrice = document.getElementById("PriceApple").value;
 
-    var nouveauWeight = document.getElementById("WeightApple").value;
+    let nouveauWeight = document.getElementById("WeightApple").value;
 
-    let quantite = quantite + 1;
+    let nouveauquantite = document.getElementById('qtePommes').value;
 
-    quantite = document.createElement("qtePommes");
+    nouveauquantite = nouveauquantite + 1;
 
-    let poids = document.createElement("poidsPommes");
+    let prix = prix + nouveauPrice;
 
-    let prix = document.createElement("prixPommes");
+    let poids = poids + nouveauWeight;
 
     prix.innerText = nouveauPrice + " $";
 
-    poids.innerText = nouveauWeight + " lbs"
+    poids.innerText = +nouveauWeight + " lbs"
 
     document.getElementById("prixPommes").append(prix);
 
-    prix.append(poids);   // mettre le span a la fin
+    document.getElementById("qtePommes").append(nouveauquantite);
+
+    document.getElementById("poidsPommes").append(poids);
 
 }
 function ajouterPoire(){
@@ -67,3 +68,24 @@ function ajouterPrune(){
 
     nouveauP.append(nouveauSpan);   // mettre le span a la fin
 }
+const varGlobale = "globale";
+
+//Une fonction
+function uneFonction() {
+    var varLocale = "locale";
+}
+
+//Un bloc
+{
+    console.log(varBloc);
+    let varBloc = "x";
+    varBloc = "bloc";
+}
+
+console.log(uneChaine);
+ var uneChaine = "var c'est mal";
+
+//Appels à la console
+console.log(varBloc);
+console.log(varGlobale);
+console.log(varLocale);
