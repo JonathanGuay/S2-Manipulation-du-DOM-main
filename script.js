@@ -20,7 +20,6 @@ let nouveauQteTotal = 0;
 let nouveauPrixTotal = 0;
 let nouveauPoidsTotal = 0;
 
-
 function ajouterPomme(){
     panier.pommes = panier.pommes + 1;
     prix = prix + nouveauPricePomme;
@@ -76,6 +75,7 @@ function ajouterPrune(){
     document.querySelector("#prixTotal").textContent = nouveauPrixTotal;
     document.querySelector("#poidsTotal").textContent = nouveauPoidsTotal;
 }
+
 
 
 
