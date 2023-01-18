@@ -1,88 +1,81 @@
 const panier = {
-    pommes : 2,
-    poires : 5,
+    pommes : 0,
+    poires : 0,
     prunes : 0,
 }
+// déclarer mes constantes
+let prix = 0;
+let poids = 0;
+let prixPoire = 0;
+let poidsPoire = 0;
+let prixPrune = 0;
+let poidsPrune = 0;
+let nouveauPricePomme = 13.50;
+let nouveauWeightPomme = 10;
+let nouveauPricePoire = 20;
+let nouveauWeightPoire = 12;
+let nouveauPricePrune = 22;
+let nouveauWeightPrune = 15;
+let nouveauQteTotal = 0;
+let nouveauPrixTotal = 0;
+let nouveauPoidsTotal = 0;
 
-// Pour afficher le nombre de pommes dans la facture détaillée
-document.querySelector("#qtePommes").textContent = panier.pommes;
-document.querySelector("#qtePoires").textContent = panier.poires;
-document.querySelector("#qtePrunes").textContent = panier.prunes;
-
-if (onclick(ajouterPomme())){
-    panier.pommes = panier.pommes + 1;
-}
 function ajouterPomme(){
-
-    let nouveauPrice = document.getElementById("PriceApple").value;
-
-    let nouveauWeight = document.getElementById("WeightApple").value;
-
     panier.pommes = panier.pommes + 1;
+    prix = prix + nouveauPricePomme;
+    poids = poids + nouveauWeightPomme;
+    prix.innerText = +prix + " $";
+    poids.innerText = +poids + " lbs";
+    document.querySelector("#poidsPommes").textContent = poids;
+    document.querySelector("#prixPommes").textContent = prix;
+    document.querySelector("#qtePommes").textContent = panier.pommes;
 
-    let prix = prix + nouveauPrice;
-
-    let poids = poids + nouveauWeight;
-
-    prix.innerText = nouveauPrice + " $";
-
-    poids.innerText = +nouveauWeight + " lbs";
-
-    document.getElementById("prixPommes").append(prix);
-
-    document.getElementById("qtePommes").append(panier.pommes);
-
-    document.getElementById("poidsPommes").append(poids);
+    // faire le total
+    nouveauQteTotal = nouveauQteTotal + 1;
+    nouveauPrixTotal = nouveauPrixTotal + nouveauPricePomme;
+    nouveauPoidsTotal = nouveauPoidsTotal +nouveauWeightPomme;
+    document.querySelector("#qteTotal").textContent = nouveauQteTotal;
+    document.querySelector("#prixTotal").textContent = nouveauPrixTotal;
+    document.querySelector("#poidsTotal").textContent = nouveauPoidsTotal;
 
 }
 function ajouterPoire(){
-    var item = document.getElementById("qtePoires").value;         // ajouter le texte
+    panier.poires = panier.poires + 1;
+    prixPoire = prixPoire + nouveauPricePoire;
+    poidsPoire = poidsPoire + nouveauWeightPoire;
+    prixPoire.innerText = +prixPoire + " $";
+    poidsPoire.innerText = +poidsPoire + " lbs";
+    document.querySelector("#poidsPoires").textContent = poidsPoire;
+    document.querySelector("#prixPoires").textContent = prixPoire;
+    document.querySelector("#qtePoires").textContent = panier.poires;
 
-    var valeur = document.getElementById("valeur").value;     // ajouter le prix
-
-    let nouveauP = document.createElement("td");              // créer une balise p
-
-    let nouveauSpan = document.createElement("span");
-
-    nouveauP.innerText = item + " : ";                // Écrire dans le paragraphe
-
-    nouveauSpan.innerText = valeur + "$";
-
-    document.getElementById("maListe").append(nouveauP);
-
-    nouveauP.append(nouveauSpan);   // mettre le span a la fin
+    // faire le total
+    nouveauQteTotal = nouveauQteTotal + 1;
+    nouveauPrixTotal = nouveauPrixTotal + nouveauPricePoire;
+    nouveauPoidsTotal = nouveauPoidsTotal +nouveauWeightPoire;
+    document.querySelector("#qteTotal").textContent = nouveauQteTotal;
+    document.querySelector("#prixTotal").textContent = nouveauPrixTotal;
+    document.querySelector("#poidsTotal").textContent = nouveauPoidsTotal;
 }
 function ajouterPrune(){
-    var item = document.getElementById("qtePrunes").value;         // ajouter le texte
+    panier.prunes = panier.prunes + 1;
+    prixPrune = prixPrune + nouveauPricePrune;
+    poidsPrune = poidsPrune + nouveauWeightPrune;
+    prixPrune.innerText = +prixPrune + " $";
+    poidsPrune.innerText = +poidsPrune + " lbs";
+    document.querySelector("#poidsPrunes").textContent = poidsPrune;
+    document.querySelector("#prixPrunes").textContent = prixPrune;
+    document.querySelector("#qtePrunes").textContent = panier.prunes;
 
-    var valeur = document.getElementById("valeur").value;     // ajouter le prix
-
-    let nouveauP = document.createElement("td");              // créer une balise p
-
-    let nouveauSpan = document.createElement("span");
-
-    nouveauP.innerText = item + " : ";                // Écrire dans le paragraphe
-
-    nouveauSpan.innerText = valeur + "$";
-
-    document.getElementById("maListe").append(nouveauP);
-
-    nouveauP.append(nouveauSpan);   // mettre le span a la fin
+    // faire le total
+    nouveauQteTotal = nouveauQteTotal + 1;
+    nouveauPrixTotal = nouveauPrixTotal + nouveauPricePrune;
+    nouveauPoidsTotal = nouveauPoidsTotal +nouveauWeightPrune;
+    document.querySelector("#qteTotal").textContent = nouveauQteTotal;
+    document.querySelector("#prixTotal").textContent = nouveauPrixTotal;
+    document.querySelector("#poidsTotal").textContent = nouveauPoidsTotal;
 }
-function ajouterTotal(){
-    var item = document.getElementById("qtePrunes").value;         // ajouter le texte
 
-    var valeur = document.getElementById("valeur").value;     // ajouter le prix
 
-    let nouveauP = document.createElement("td");              // créer une balise p
 
-    let nouveauSpan = document.createElement("span");
 
-    nouveauP.innerText = item + " : ";                // Écrire dans le paragraphe
-
-    nouveauSpan.innerText = valeur + "$";
-
-    document.getElementById("maListe").append(nouveauP);
-
-    nouveauP.append(nouveauSpan);   // mettre le span a la fin
-}
