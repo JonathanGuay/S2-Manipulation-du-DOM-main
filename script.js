@@ -9,15 +9,16 @@ document.querySelector("#qtePommes").textContent = panier.pommes;
 document.querySelector("#qtePoires").textContent = panier.poires;
 document.querySelector("#qtePrunes").textContent = panier.prunes;
 
+if (onclick(ajouterPomme())){
+    panier.pommes = panier.pommes + 1;
+}
 function ajouterPomme(){
 
     let nouveauPrice = document.getElementById("PriceApple").value;
 
     let nouveauWeight = document.getElementById("WeightApple").value;
 
-    let nouveauquantite = document.getElementById('qtePommes').value;
-
-    nouveauquantite = nouveauquantite + 1;
+    panier.pommes = panier.pommes + 1;
 
     let prix = prix + nouveauPrice;
 
@@ -25,11 +26,11 @@ function ajouterPomme(){
 
     prix.innerText = nouveauPrice + " $";
 
-    poids.innerText = +nouveauWeight + " lbs"
+    poids.innerText = +nouveauWeight + " lbs";
 
     document.getElementById("prixPommes").append(prix);
 
-    document.getElementById("qtePommes").append(nouveauquantite);
+    document.getElementById("qtePommes").append(panier.pommes);
 
     document.getElementById("poidsPommes").append(poids);
 
@@ -68,24 +69,20 @@ function ajouterPrune(){
 
     nouveauP.append(nouveauSpan);   // mettre le span a la fin
 }
-varGlobale = "globale";
+function ajouterTotal(){
+    var item = document.getElementById("qtePrunes").value;         // ajouter le texte
 
-//Une fonction
-function uneFonction() {
-    var varLocale = "locale";
+    var valeur = document.getElementById("valeur").value;     // ajouter le prix
+
+    let nouveauP = document.createElement("td");              // créer une balise p
+
+    let nouveauSpan = document.createElement("span");
+
+    nouveauP.innerText = item + " : ";                // Écrire dans le paragraphe
+
+    nouveauSpan.innerText = valeur + "$";
+
+    document.getElementById("maListe").append(nouveauP);
+
+    nouveauP.append(nouveauSpan);   // mettre le span a la fin
 }
-
-//Un bloc
-{
-    console.log(varBloc);
-    let varBloc = "x";
-    varBloc = "bloc";
-}
-
-console.log(uneChaine);
- var uneChaine = "var c'est mal";
-
-//Appels à la console
-console.log(varBloc);
-console.log(varGlobale);
-console.log(varLocale);
